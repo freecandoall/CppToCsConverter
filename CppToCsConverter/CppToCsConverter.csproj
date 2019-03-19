@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6E0D026-E1E7-4FE0-AF46-0AD9E67C4C8D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PacketGenerator</RootNamespace>
+    <AssemblyName>PacketGenerator</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\DebugInfo.cs" />
+    <Compile Include="Converter\ElementFactory.cs" />
+    <Compile Include="Converter\Identify\CustomIdentify.cs" />
+    <Compile Include="Converter\Identify\CustomReplace.cs" />
+    <Compile Include="Converter\Identify\ElemIdentify.cs" />
+    <Compile Include="Converter\CSConvert.cs" />
+    <Compile Include="Converter\ElementParser.cs" />
+    <Compile Include="Converter\Identify\ElemReplace.cs" />
+    <Compile Include="Converter\Identify\ObjectIdentify.cs" />
+    <Compile Include="Converter\Identify\ObjectReplace.cs" />
+    <Compile Include="Converter\Link\BrokenLinker.cs" />
+    <Compile Include="Converter\StreamParser.cs" />
+    <Compile Include="Converter\Structure\ElemConstMember.cs" />
+    <Compile Include="Converter\Structure\ElemClass.cs" />
+    <Compile Include="Converter\Structure\ElemComment.cs" />
+    <Compile Include="Converter\Structure\ElemCustomGen.cs" />
+    <Compile Include="Converter\Structure\ElemDefine.cs" />
+    <Compile Include="Converter\Structure\IElementEx.cs" />
+    <Compile Include="Converter\Structure\ElemEnum.cs" />
+    <Compile Include="Converter\Structure\ElemEnumMember.cs" />
+    <Compile Include="Converter\Structure\ElemForceComment.cs" />
+    <Compile Include="Converter\Structure\ElemFunction.cs" />
+    <Compile Include="Converter\Structure\ElemInclude.cs" />
+    <Compile Include="Converter\Structure\ElemMember.cs" />
+    <Compile Include="Converter\Structure\ElemNamespace.cs" />
+    <Compile Include="Converter\Structure\ElemRoot.cs" />
+    <Compile Include="Converter\Structure\ElemStruct.cs" />
+    <Compile Include="Converter\Structure\ElemGroupComment.cs" />
+    <Compile Include="Converter\Structure\IElement.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
